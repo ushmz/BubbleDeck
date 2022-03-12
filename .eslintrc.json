@@ -1,0 +1,68 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "tsx": true
+    },
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "jest",
+    "prettier",
+    "prefer-arrow",
+    "react",
+    "react-hooks",
+    "unused-imports"
+  ],
+  "root": true,
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "pathGroups": [
+          { "pattern": "Components/**/*", "group": "internal" },
+          { "pattern": "Pages/**/*", "group": "internal" },
+          { "pattern": "Shared/**/*", "group": "internal" }
+        ]
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "prettier/prettier": "error",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "unused-imports/no-unused-imports": "warn"
+  },
+  "globals": {
+    "__DEV__": true,
+    "alert": false,
+    "console": false,
+    "document": false
+  }
+}
