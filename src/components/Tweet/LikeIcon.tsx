@@ -1,5 +1,5 @@
 import React from 'react';
-import { Path, Svg, SvgXml } from 'react-native-svg';
+import { Path, Svg } from 'react-native-svg';
 
 type Props = {
   pressed?: boolean;
